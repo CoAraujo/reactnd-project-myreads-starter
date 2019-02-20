@@ -9,14 +9,12 @@ class BookShelf extends Component {
         }
     }
 
-    shouldComponentUpdate() {
-        {this.props.books.map(book => {
-            console.log("passei aqui 1")
+    componentDidMount() {
+        this.props.books.map(book => {
             if(book.shelf === this.props.shelfTitle){
                 this.setState({ book })
-                console.log("passei aqui 2")
             }
-        })}
+        })
     }
 
     render(){
@@ -24,8 +22,8 @@ class BookShelf extends Component {
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{this.props.shelfTitle}</h2>
                   <div className="bookshelf-books">
-                    {console.log(this.props)}
-                    <BookList books={this.state.books} />
+                    {/* Aqui n funciona com o state */}
+                    <BookList books={this.props.books} />
                 </div>
             </div>
         )
