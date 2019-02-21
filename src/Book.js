@@ -5,6 +5,10 @@ class Book extends Component {
         super(props);
     }
 
+    onUpdate = () => {
+        
+    }
+
     render(){
         return(
             <div className="book">
