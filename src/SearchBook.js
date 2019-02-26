@@ -14,7 +14,6 @@ class SearchBook extends Component {
 
     searchBooks = e => {
         if (e.key === 'Enter') {
-            console.log("apertei")
             BooksAPI.search(e.target.value)
                 .then((books) => {
                     this.setState(() => ({

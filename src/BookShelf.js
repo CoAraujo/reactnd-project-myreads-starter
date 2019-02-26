@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import BookList from './BookList';
 
 class BookShelf extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            books: []
-        }
-    }
-
+    
     filter = () => {
         let tempBook = []
         this.props.books.map(book => {
@@ -24,7 +18,7 @@ class BookShelf extends Component {
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{this.props.shelfTitle}</h2>
                   <div className="bookshelf-books">
-                    <BookList books={ this.filter() } />
+                    <BookList books={ this.filter() } update={this.props.update} />
                 </div>
             </div>
         )
